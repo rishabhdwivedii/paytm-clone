@@ -1,9 +1,10 @@
-import Image from "next/image";
-import { Card } from "@repo/ui/card";
-import { Code } from "@repo/ui/code";
-import styles from "./page.module.css";
-import { Button } from "@repo/ui/button";
+"use client";
 
-export default function Page(): JSX.Element {
-  return <div className="bg-gray-400">Hello from Merchant-app</div>;
+import { useBalance } from "@repo/store/balance";
+
+export default function() {
+  const balance = useBalance();
+  return <div>
+    hi there {balance}
+  </div>
 }
