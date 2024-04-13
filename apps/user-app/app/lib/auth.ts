@@ -1,4 +1,4 @@
-import db from "@repo/db/clie                                                                                                                                                                                                                                                                                                                           nt";
+import db from "@repo/db/client";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
@@ -17,7 +17,7 @@ export const authOptions = {
       },
       // TODO: User credentials type from next-auth
       async authorize(credentials: any) {
-        // Do zod validation, OTP validation here
+        //TODO: Do zod validation, OTP validation here
         const hashedPassword = await bcrypt.hash(credentials.password, 10);
         const existingUser = await db.user.findFirst({
           where: {
